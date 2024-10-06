@@ -1,0 +1,76 @@
+/* app/assets/stylesheets/auth.css */
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  .auth-box {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+  }
+
+  .auth-box h1 {
+    margin-bottom: 20px;
+    color: #343a40;
+  }
+
+  .auth-box .form-group {
+    margin-bottom: 20px;
+  }
+
+  .auth-box .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #343a40;
+  }
+
+  .auth-box .form-group input,
+  .auth-box .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+
+  .auth-box .form-group input[type="submit"] {
+    width: 100%;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 10px;
+  }
+
+  .auth-box .form-group input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+
+  .auth-box .form-group a {
+    display: block;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+  }
+
+  .auth-box .form-group a:hover {
+    text-decoration: underline;
+  }

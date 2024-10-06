@@ -1,0 +1,27 @@
+<!-- app/views/users/new.html.erb -->
+<div class="auth-container">
+  <div class="auth-box">
+    <h1>Register</h1>
+    <%= form_with model: @user, url: register_path, local: true do |form| %>
+      <div class="form-group">
+        <%= form.label :email %>
+        <%= form.email_field :email, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= form.label :password %>
+        <%= form.password_field :password, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= form.label :password_confirmation %>
+        <%= form.password_field :password_confirmation, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= form.label :role %>
+        <%= form.select :role, options_for_select([['Receptionist', 'receptionist'], ['Doctor', 'doctor']]), {}, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= form.submit "Register", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>

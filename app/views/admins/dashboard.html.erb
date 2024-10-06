@@ -1,0 +1,19 @@
+<!-- app/views/admins/dashboard.html.erb -->
+<h1>Manage Users</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Role</th>
+    <th>Actions</th>
+  </tr>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.name %></td>
+      <td><%= user.email %></td>
+      <td><%= user.role %></td>
+      <td><%= link_to 'Edit Role', edit_role_admin_path(user) %></td>
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: postgres
+  password: Massbiswas@1
+  host: localhost
+
+development:
+  <<: *default
+  database: clinic_management_development
+
+test:
+  <<: *default
+  database: clinic_management_test
+
+production:
+  <<: *default
+  database: clinic_management_production
+  username: clinic_management
+  password: <%= ENV['CLINIC_MANAGEMENT_DATABASE_PASSWORD'] %>

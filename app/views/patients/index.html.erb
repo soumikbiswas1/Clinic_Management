@@ -1,0 +1,41 @@
+<!-- app/views/patients/index.html.erb -->
+<div class="container">
+  <h1 class="header">Receptionist Dashboard</h1>
+
+ <%= link_to 'Add New Patient', new_patient_path, class: "btn btn-primary" %>
+
+  <%= form_with url: patients_path, method: :get, local: true, class: "form-group" do %>
+    <div class="form-group">
+      <%= text_field_tag :search, params[:search], placeholder: "Search patients", class: "form-control" %>
+      <%= submit_tag "Search", class: "btn btn-secondary" %>
+    </div>
+  <% end %>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @patients.each do |patient| %>
+        <tr>
+          <td><%= patient.name %></td>
+          <td><%= patient.phone %></td>
+          <td><%= patient.email %></td>
+          <td><%= patient.address %></td>
+          <td>
+            <%= link_to 'Edit', edit_patient_path(patient), class: "btn btn-warning" %>
+            <%= link_to 'Delete', patient, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= paginate @patients %>
+</div>

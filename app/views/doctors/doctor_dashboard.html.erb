@@ -1,0 +1,15 @@
+<h1>Doctor Dashboard</h1>
+
+<h2>Patients to Attend</h2>
+<ul>
+  <% @patients_to_attend.each do |patient| %>
+    <li><%= patient.name %></li>
+  <% end %>
+</ul>
+
+<h2>Attended Patients</h2>
+<ul>
+  <% @attended_patients.each do |patient| %>
+    <li><%= patient.name %></li>
+  <% end %>
+</ul>
